@@ -1,0 +1,6 @@
+language: bash
+
+script:
+  - echo "AWS_ACCESS_KEY_ID=randomkey123"  # Пример вывода AWS-подобного ключа
+  - echo "AWS_SECRET_ACCESS_KEY=randomsecret456"  # Пример вывода AWS-pодобного секретного ключа
+  # Добавьте любые другие команды, которые могут случайно раскрыть секретные данные
