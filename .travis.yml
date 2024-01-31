@@ -1,4 +1,7 @@
 language: go # or any other language
+env:
+  global:
+    - FAKE_AWS_SECRET_KEY="wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 script:
   - echo "Starting the build process..."
-  - echo $AWS_KEY
+  - echo "AWS Key: $FAKE_AWS_SECRET_KEY"
