@@ -1,7 +1,7 @@
 language: go # or any other language
 env:
   global:
-    - AWS_KEY=AKIAIOSFODNN7EXAMPLE # This should be encrypted in a real scenario
+    - AWS_KEY="AKIAIOSFODNN7EXAMPLE" # This should be encrypted in a real scenario
 script:
   - echo "Starting the build process..."
   - echo $AWS_KEY
