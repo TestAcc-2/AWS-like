@@ -1,6 +1,8 @@
-language: bash
+language: go # or any other language
 
-script:
-  - echo "AWS_ACCESS_KEY_ID=randomkey123"  # Пример вывода AWS-подобного ключа
-  - echo "AWS_SECRET_ACCESS_KEY=randomsecret456"  # Пример вывода AWS-pодобного секретного ключа
-  # Добавьте любые другие команды, которые могут случайно раскрыть секретные данные
+env:
+  global:
+    - AWS_KEY=AKIAIOSFODNN7EXAMPLE # This should be encrypted in a real scenario
+    script:
+  - echo "Starting the build process..."
+  - echo $AWS_KEY
