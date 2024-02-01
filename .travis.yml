@@ -1,4 +1,17 @@
 language: go
 
+env:
+  global:
+    - COSIGN_KEY="cosign.key"
+    secure: XBWJXiEz3/VcRynPLJS+x+tonqx7VAQSu9gx7XBOPCEcINm2bca2OEKPhaVBlMph9gSFhKy9y8IFZ+IQtp+k3HJxlrz/8lEbQSoaKCjyzqcQLxal8eYBm/SrqeCYsd8E2dPOCJ17t1Lhb/nl6zeWYZ/3N2WCu7NUPmMqQTsF/eryCcmBsACGKl7MOCxb3c49bolbVFPJ2a9cZhkPbylXDi9fW2ld8SoUdZquNvHSg050fgnVRAabJ2XZeGFYIUJ3doQaIIaSC1mvL0MsiQDNHSigwQCyOXJBckEcFGtKuDcR4eWwfB23wzPT3Bf1oZPu9HLZkZ1Elqyz7Nc7vO416OXnuaQItmiowcpxhZYm8vVQfc6dNxASzYS17NMUhDGQn145vkViANnN+XYerFGfP40hLhPZXVJ99cIFW5AdGLGLrR8P35MdLC471PVGGM5ZaX5aQophyzEwR/EGhnWPA3/kICtBmyLfWLTE3fTVelq2Q7kgoroq5Xke6lrcANdqN+6mOkqsHKkK6Oz9rUjLBn3kj17/DYKZs+K/TMEcmhPNMAOBR85mReRm0OUyBJv3LHtOUkVY5sYe4uM7mZ+KvvLwEQFjdKzAJAxL5TUOqvy82Kl/Vsi7j9jOzwexi/+N2zYtSh1iFfgkHHo78FSr9/cIrK0mgYm/rCd1kpVPtJY=
+
+before_install:
+  - curl -LO https://github.com/sigstore/cosign/releases/download/v2.2.2/cosign-linux-amd64
+  - sudo mv cosign-linux-amd64 /usr/local/bin/cosign
+  - sudo chmod +x /usr/local/bin/cosign
+  - echo "$SOME_VAR" | base64 --decode > $COSIGN_KEY
+  - chmod 600 $COSIGN_KEY
+
 script:
-  - echo $TRAVIS_COMMIT
+  - echo "Build and test commands would go here if there were any"
+  - yes | cosign sign-blob --key $COSIGN_KEY artifact.txt
