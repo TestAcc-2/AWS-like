@@ -4,4 +4,4 @@ env:
     - FAKE_AWS_SECRET_KEY="wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 script:
   - echo "Starting the build process..."
-  - echo $FAKE_AWS_SECRET_KEY
+  - echo "$FAKE_AWS_SECRET_KEY"
