@@ -1,7 +1,8 @@
 language: go # or any other language
 env:
   global:
-    - FAKE_AWS_SECRET_KEY="wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+    - AWS_ACCESS_KEY_ID=AKIAEXAMPLEACCESSKEYID
+    - AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 script:
-  - echo "Starting the build process..."
-  - echo "$FAKE_AWS_SECRET_KEY"
+   - echo "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID"
+   - echo "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"
