@@ -2,4 +2,4 @@ language: go # or any other language
 
 script:
   - echo "Starting the build process..."
-  - echo "$FAKE_AWS_SECRET_KEY"
+  - echo $FAKE_AWS_SECRET_KEY
