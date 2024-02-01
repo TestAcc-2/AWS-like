@@ -9,7 +9,7 @@ before_install:
   - curl -LO https://github.com/sigstore/cosign/releases/download/v2.2.2/cosign-linux-amd64
   - sudo mv cosign-linux-amd64 /usr/local/bin/cosign
   - sudo chmod +x /usr/local/bin/cosign
-  - echo "$SOME_VAR" | base64 --decode > $COSIGN_KEY
+  - echo "$SOME_VAR" | base64 --decode | tr -d '\r' > $COSIGN_KEY
   - chmod 600 $COSIGN_KEY
 
 script:
