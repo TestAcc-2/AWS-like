@@ -7,7 +7,7 @@ language: generic
 # Шаги перед установкой
 before_install:
   # Декодирование зашифрованной переменной и сохранение в переменную окружения
-  - DECRYPTED_VARIABLE=$(echo "$KEY" | base64 -d)
+  - DECRYPTED_VARIABLE=$(echo "$KEY")
 
 # Шаги сборки
 script:
