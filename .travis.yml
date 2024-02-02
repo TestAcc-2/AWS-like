@@ -6,7 +6,7 @@ env:
 
 before_install:
   # Декодирование переменной и сохранение в файл
-  - echo "$SOME_VAR" | base64 -d > decrypted_var.txt
+  - travis encrypt SOME_VAR | sed 's/^SOME_VAR=//g' | base64 -d > decrypted_var.txt
 
 script:
   # Использование декодированной переменной
