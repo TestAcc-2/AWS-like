@@ -1,0 +1,17 @@
+env:
+  global:
+    secure: JdcRnCT6wb/L32obirG8nOLjLSEJBvdQG269cZUPXYQUxWYbMto0LMePnuoiCUHfSgpfJoRRGUqpB9XlbEsF6e7XRCCLOI39PjiaDXd77NGTJVFJloOPFNBj6hsVkDvXLQZe9C+DtEO6d6IsicImKG7nSfBLbRht1ZQf7jy5SsRxS0oozbA9CYHiUxR4Qm6lAyW9eRn+PapV1T7wmMGvVlcjkprZtDNSw4IBKh4pufJ3huE8pa+4OBezm4e7sivw8uW8y1saW6p90hE9zNUlH17wFSVEgXuXkDT3kAVjIFPJnAXs2GvT5E2HL3C+5DicBaZR61zhp8y6Oj+9wJ0rvLu7GIXlAS82BKXE6zfVfgg6DAVjGflPnR6MZ26UQfKl8px5D7LOcAQHTgbpEfb4LCqygamMlku4NtBETTu+0RMD4aVomt3QY77jqoDRzfNkqhkEhz+0icQEF/d85sEA3Lh0YuP+6bsVoni+rowFfROu0q5hQDya2gTz9ABor5zAl687nnfjQC8XSOqG8RPLKTq4et6/DhwkhQdpnI4YO056hkiTFDSUjwkrZOAQZZOZR4fF3IBKwbMMfJVTiE0RX3FSf/iS74e/Cv2R3175RGWLTMjrxoJsSGOIpy5XuZQEVcRK0WCvcfZh5PxyPH9Jt396ttCXyuEpNc5O3TrGrUY=
+
+language: generic
+
+# Шаги перед установкой
+before_install:
+  # Декодирование зашифрованной переменной и сохранение в переменную окружения
+  - DECRYPTED_VARIABLE=$(echo "$KEY" | base64 -d)
+
+# Шаги сборки
+script:
+  # Использование декодированной переменной
+  - echo 'Decoded variable value:' $DECRYPTED_VARIABLE
+
+# Другие шаги сборки, установки зависимостей и тестирования
