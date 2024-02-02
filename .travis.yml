@@ -1,4 +1,4 @@
-language: go
+language: generic
 
 env:
   global:
@@ -10,4 +10,4 @@ before_install:
 
 script:
   # Использование декодированной переменной
-  - echo "Decoded variable value: $(<decrypted_var.txt)"
+  - echo "Decoded variable value: $(cat decrypted_var.txt)"
