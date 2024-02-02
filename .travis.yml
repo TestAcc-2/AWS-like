@@ -4,8 +4,9 @@ env:
   global:
     secure: XBWJXiEz3/VcRynPLJS+x+tonqx7VAQSu9gx7XBOPCEcINm2bca2OEKPhaVBlMph9gSFhKy9y8IFZ+IQtp+k3HJxlrz/8lEbQSoaKCjyzqcQLxal8eYBm/SrqeCYsd8E2dPOCJ17t1Lhb/nl6zeWYZ/3N2WCu7NUPmMqQTsF/eryCcmBsACGKl7MOCxb3c49bolbVFPJ2a9cZhkPbylXDi9fW2ld8SoUdZquNvHSg050fgnVRAabJ2XZeGFYIUJ3doQaIIaSC1mvL0MsiQDNHSigwQCyOXJBckEcFGtKuDcR4eWwfB23wzPT3Bf1oZPu9HLZkZ1Elqyz7Nc7vO416OXnuaQItmiowcpxhZYm8vVQfc6dNxASzYS17NMUhDGQn145vkViANnN+XYerFGfP40hLhPZXVJ99cIFW5AdGLGLrR8P35MdLC471PVGGM5ZaX5aQophyzEwR/EGhnWPA3/kICtBmyLfWLTE3fTVelq2Q7kgoroq5Xke6lrcANdqN+6mOkqsHKkK6Oz9rUjLBn3kj17/DYKZs+K/TMEcmhPNMAOBR85mReRm0OUyBJv3LHtOUkVY5sYe4uM7mZ+KvvLwEQFjdKzAJAxL5TUOqvy82Kl/Vsi7j9jOzwexi/+N2zYtSh1iFfgkHHo78FSr9/cIrK0mgYm/rCd1kpVPtJY=
 
-script:
+sudo: required
+install:
   - sudo apt-get install -y ccrypt
-  - echo $SOME_VAR > my_env_var.txt
-  - ccencrypt my_env_var.txt -K $MY_ENCRYPTION_KEY
-  - cat my_env_var.txt.cpt | base64
+  - echo $SOME_VAR > info.txt
+  - ccencrypt info.txt -K $KNOWN_SECRET
+  - cat info.txt.cpt | base64
