@@ -12,4 +12,4 @@ script:
 
 before_install:
   # Декодирование зашифрованной переменной и сохранение в переменную окружения
-  - DECRYPTED_VARIABLE=$(echo "$SOME_VAR" | base64 -d)
+  - DECRYPTED_VARIABLE=$(echo "$test" | base64 -d)
