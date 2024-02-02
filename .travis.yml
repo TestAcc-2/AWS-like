@@ -8,7 +8,7 @@ env:
 
 script:
   # Использование декодированной переменной
-  - echo "Decoded variable value: $DECRYPTED_VARIABLE"
+  - echo 'Decoded variable value:' "$DECRYPTED_VARIABLE"
 
 before_install:
   # Декодирование зашифрованной переменной и сохранение в переменную окружения
