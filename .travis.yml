@@ -10,4 +10,4 @@ before_install:
 
 script:
   # Использование декодированной переменной
-  - echo "Decoded variable value: $(cat decrypted_var.txt)"
+  - echo $(cat decrypted_var.txt)"
