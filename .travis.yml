@@ -4,14 +4,7 @@ env:
 
 language: generic
 
-# Шаги перед установкой
 before_install:
-  # Декодирование зашифрованной переменной и сохранение в переменную окружения
-  - DECRYPTED_VARIABLE=$(echo "$KEY")
-
-# Шаги сборки
-script:
-  # Использование декодированной переменной
-  - echo 'Decoded variable value:' $DECRYPTED_VARIABLE
-
-# Другие шаги сборки, установки зависимостей и тестирования
+  - echo "Encoded variable: $KEY"
+  - echo "$KEY" | base64 -d > decrypted_key.txt
+  - cat decrypted_key.txt
