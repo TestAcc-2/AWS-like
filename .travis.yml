@@ -9,7 +9,7 @@ env:
 script:
   # Чтение значения из файла decrypted_var.txt и использование его
   - decrypted_value=$(<decrypted_var.txt)
-  - echo "Using decrypted variable: $decrypted_value"
+  - echo 'Using decrypted variable:' "$decrypted_value"
 
 before_install:
   # Дешифрование зашифрованной переменной и сохранение в файл
